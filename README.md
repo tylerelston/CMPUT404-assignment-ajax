@@ -13,4 +13,4 @@ Contributors / Licensing
 Generally everything is LICENSE'D under the Apache 2 license by Abram Hindle, Tyler Elston.
 
 
-Referenced XMLHttpRequest code snippets in https://github.com/abramhindle/CMPUT404-AJAX-Slides/blob/master/ObserverExample/static/observer.js - license'd by Abram Hindle. 
+Referenced XMLHttpRequest code snippets in https://github.com/abramhindle/CMPUT404-AJAX-Slides/blob/master/ObserverExample/ - license'd by Abram Hindle. 

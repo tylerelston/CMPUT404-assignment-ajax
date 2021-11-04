@@ -62,6 +62,9 @@
 
 
         world = {};
+        colour = 'green';
+        size = 1;
+
 
         //XXX: TODO Make this prettier!
         function drawCircle(context, entity) {
@@ -144,6 +147,15 @@
 
 
         function addEntity(entity, data) {
+            if (colour == 'purple')
+                colour = 'green';
+            else if (colour == 'green')
+                colour = 'orange';
+            else if (colour == 'orange')
+                colour = 'yellow';
+            else if (colour == 'yellow')
+                colour = 'purple';
+            data['colour'] = colour;
             world[entity] = data;
             //XXX: Send a XHTML Request that updates the entity you just  modified!
             //drawNextFrame(); // (but should we?) we should not
@@ -265,10 +277,11 @@
         // Add the application specific mouse listeners!
         //XXX: TODO Make these prettier!
         mouse.mousedowners.push(function (x, y, clicked, e) {
+            size = 1;
             addEntityWithoutName({
                 'x': x,
                 'y': y,
-                'colour': 'blue'
+                'colour': 'blue',
             });
         });
 
@@ -280,12 +293,14 @@
             });
         });
 
+
         mouse.mousedraggers.push(function (x, y, clicked, e) {
+            size = size + 0.05;
             addEntityWithoutName({
                 'x': x,
                 'y': y,
-                'colour': 'green',
-                'radius': 10
+                'colour': colour,
+                'radius': size
             });
         });
 
